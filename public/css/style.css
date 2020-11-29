@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+body {
+  margin: 0;
+  background: #c4c4c4;
+}
+/* header */
+header {
+  position: relative;
+  background: #8e0b13;
+  box-shadow: 0px 0px 30px #000;
+  z-index: 999;
+}
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25vw;
+  padding: 5vw 0vw;
+}
+nav {
+  display: none;
+}
+
+/* Home */
+.imgContainer {
+  height: 45vh;
+}
+.flowersImg {
+  width: 100vw;
+}
+.img__large {
+  display: none;
+}
+.img__small {
+  display: block;
+}
+main {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 17vh;
+  width: 75vw;
+  background: #fff;
+  padding: 5vw;
+  text-align: center;
+  color: #8e0b13;
+  border-radius: 40px;
+}
+#mainTxt {
+  font-size: 6vw;
+  margin: 0;
+}
+.contact {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3vw;
+}
+#copyright {
+  position: relative;
+  bottom: 15vh;
+  text-align: center;
+  color: #8e0b13;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3vw;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background: #8e0b13;
+}
+.footerImg {
+  width: 12vw;
+  padding: 3vw 6vw;
+  cursor: pointer;
+}
+#footCopyright {
+  display: none;
+}
+.footContact {
+  display: none;
+}
+
+/* Gallery */
+#galleryTitle {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8vw;
+  color: #fff;
+}
+#gallery {
+  width: 75vw;
+  padding: 5vw;
+  border-radius: 40px;
+  background: #fff;
+  margin: 0 auto 15vh auto;
+}
+.galleryImg {
+  width: 100%;
+}
+.grid {
+  display: flex;
+}
+.grid-col {
+  flex: 1;
+}
+.grid-col--2,
+.grid-col--3 {
+  display: none;
+}
+.grid-item {
+  margin: 0.5vh;
+}
+
+/* Services */
+#servicesMain {
+  position: relative;
+  top: 0;
+  margin-bottom: 15vh;
+  width: 75vw;
+  padding: 5vw;
+  background: #fff;
+}
+.serviceImg {
+  margin: 1vw;
+  border-radius: 40px;
+  opacity: 0.4;
+  width: 70vw;
+}
+.servicesContainer {
+  position: relative;
+  color: #000;
+  text-align: center;
+}
+.imgHeader {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  font-family: "Montserrat", sans-serif;
+  font-size: 6vw;
+}
+.imgText {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 60vw;
+  transform: translate(-50%, -50%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 4vw;
+}
+.oneLineHeader {
+  top: 25%;
+}
+.seedingHeader {
+  top: 20%;
+}
+
+/* Free Estimate */
+#estimateMain {
+  top: 0vh;
+  margin-bottom: 15vh;
+}
+#formResponse {
+  margin: 0;
+}
+.textarea {
+  width: 65vw;
+  padding: 1vw;
+  margin: 2vw;
+  border-style: solid;
+  border-width: 0.3vw;
+  border-color: #c4c4c4;
+  font-size: 5vw;
+}
+textarea {
+  height: 20vh;
+}
+.spamMsg {
+  display: none;
+}
+button {
+  width: 50vw;
+  padding: 4vw;
+  margin: 2vw;
+  border-style: solid;
+  border-radius: 100px;
+  background: #8e0b13;
+  color: #fff;
+  font-size: 6vw;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+/*resizing for larger screens */
+@media only screen and (min-width: 600px) {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  .wrapper {
+    min-height: 86%;
+    position: relative;
+    padding-bottom: 14vh;
+  }
+  /* header */
+  header {
+    box-shadow: 0px 0px 30px #000;
+    overflow: hidden;
+  }
+  #logo {
+    float: left;
+    margin-left: 8vw;
+    margin-right: 0vw;
+    width: 7vw;
+    height: 7vw;
+    padding: 1vw 0vw;
+  }
+  nav {
+    display: inline-block;
+    padding: 2.5vw 0;
+    width: 50vw;
+    text-align: center;
+  }
+  nav a {
+    display: inline-block;
+    padding: 1vw;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5vw;
+  }
+
+  /* Home */
+  .imgContainer {
+    overflow: hidden;
+    height: auto;
+  }
+  .flowersImg {
+    width: 100%;
+  }
+  .img__small {
+    display: none;
+  }
+  .img__large {
+    display: block;
+  }
+  main {
+    border-radius: 30px;
+    bottom: 5vh;
+    margin-bottom: 5vh;
+    padding: 3vw;
+    line-height: 1.4;
+  }
+  #mainTxt {
+    font-size: 3vw;
+    margin: 0;
+  }
+  .contact {
+    display: none;
+  }
+  #copyright {
+    display: none;
+  }
+  footer {
+    position: absolute;
+    height: 12vh;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+  }
+  .footerImg {
+    display: none;
+  }
+  .footerContact {
+    display: flex;
+    flex-direction: row;
+  }
+  #footCopyright {
+    float: left;
+    display: block;
+    height: 2vh;
+    width: 40vw;
+    padding: 5vh;
+    margin: 0;
+  }
+  .footContact {
+    position: relative;
+    float: right;
+    display: block;
+    width: 45vw;
+    margin: 0;
+  }
+  #footAddress {
+    margin-top: 4vh;
+    height: 2vh;
+  }
+  #footPhone {
+    margin-bottom: 4vh;
+    height: 2vh;
+  }
+
+  /* Gallery */
+  #galleryTitle {
+    font-size: 4vw;
+  }
+  #gallery {
+    padding: 3vw;
+    border-radius: 30px;
+  }
+  .grid-col--2,
+  .grid-col--3 {
+    display: block;
+  }
+
+  /* Services */
+  #servicesMain {
+    padding: 3vw;
+  }
+  .serviceImg {
+    border-radius: 30px;
+    width: 30vw;
+  }
+  .servicesContainer {
+    width: 35vw;
+    margin: 0;
+    display: inline-block;
+  }
+  .imgHeader {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25vw;
+    font-size: 2vw;
+  }
+  .imgText {
+    position: absolute;
+    top: 50;
+    left: 50%;
+    width: 25vw;
+    transform: translate(-50%, -50%);
+    font-size: 1.5vw;
+  }
+  .oneLineHeader {
+    top: 25%;
+  }
+  .seedingHeader {
+    top: 25%;
+  }
+
+  /* Free Estimate */
+  #estimateMain {
+    top: 0vh;
+    margin-bottom: 15vh;
+  }
+  .textarea {
+    width: 70vw;
+    padding: 0.5vw;
+    margin: 1vw;
+    border-width: 0.2vw;
+    font-size: 2vw;
+  }
+  button {
+    width: 25vw;
+    padding: 2vw;
+    margin: 1vw;
+    font-size: 2vw;
+  }
+}

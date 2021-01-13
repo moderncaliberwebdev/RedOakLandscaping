@@ -16,6 +16,7 @@
     "fs": "0.0.1-security",
     "hbs": "^4.1.1",
     "mailparser": "^3.0.0",
+    "mongoose": "^5.11.11",
     "nodemailer": "^6.4.14",
     "nodemailer-mailgun-transport": "^2.0.1",
     "validator": "^13.1.17"

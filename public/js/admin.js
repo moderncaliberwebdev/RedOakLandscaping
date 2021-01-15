@@ -10,16 +10,6 @@ const mapImgs = async () => {
   //fetches images from database
   const images = await fetchImgs()
 
-  {
-    /* <div class="admin__upload">
-                    <div class="admin__upload__imgCont">
-                        <img src="galleryImgs/img1.jpg" alt="garden" class="admin__upload__thumb">
-                    </div>
-                    <p class="admin__upload__text">gallery.jpg</p>
-                    <p class="admin__upload__x">X</p>
-                </div> */
-  }
-
   for (let i = 0; i < images.length; i++) {
     const adminMain = document.getElementById('adminMain')
     // new divs for admin panel
@@ -53,3 +43,23 @@ const mapImgs = async () => {
 }
 
 mapImgs()
+
+document.querySelector('#file').addEventListener('change', async (e) => {
+  const file = e.target.files[0]
+  const formData = new FormData()
+  formData.append('image', file)
+
+  try {
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    }
+
+    const { data } = await axios.post('/upload', formData, config)
+
+    console.log(data)
+  } catch (error) {
+    console.error(error)
+  }
+})

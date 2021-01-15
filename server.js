@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const fs = require('fs')
 const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
+const multer = require('multer')
 
 const connectDB = require('./config/db')
 const mailTo = require('./mail')
@@ -113,6 +114,51 @@ app.get('/admin', (req, res) => {
   res.render('admin')
 })
 
+// Image upload
+const storage = multer.diskStorage({
+  destination(req, file, cb) {
+    cb(null, './public/galleryImgs')
+  },
+  filename(req, file, cb) {
+    cb(
+      null,
+      `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`
+    )
+  },
+})
+
+function checkFileType(file, cb) {
+  const filetypes = /jpg|jpeg|png/
+  const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
+  const mimetype = filetypes.test(file.mimetype)
+
+  if (extname && mimetype) {
+    return cb(null, true)
+  } else {
+    cb('Images only!')
+  }
+}
+
+const upload = multer({
+  storage,
+  fileFilter: function (req, file, cb) {
+    checkFileType(file, cb)
+  },
+})
+
+app.post('/upload', upload.single('image'), async (req, res) => {
+  const filePath = req.file.path.split('public/')[1]
+  const imgName = filePath.split('galleryImgs/')[1]
+
+  const image = new Image({
+    src: filePath,
+    alt: imgName,
+  })
+
+  await image.save()
+  res.json(image)
+})
+
 app.get('/sitemap', (req, res) => {
   res.contentType('application/xml')
   res.sendFile(path.join(__dirname, 'sitemap.xml'))
@@ -127,16 +173,6 @@ app.get('/image', async (req, res) => {
   } else {
     throw new Error('No Images')
   }
-})
-
-app.post('/image', async (req, res) => {
-  const image = new Image({
-    src: req.body.src,
-    alt: req.body.alt,
-  })
-
-  await image.save()
-  res.json(image)
 })
 
 app.get('*', (req, res) => {

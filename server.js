@@ -122,7 +122,9 @@ const storage = multer.diskStorage({
   filename(req, file, cb) {
     cb(
       null,
-      `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`
+      `${file.fieldname}-${Date.now().toString().substr(8, 12)}${path.extname(
+        file.originalname
+      )}`
     )
   },
 })
@@ -157,6 +159,24 @@ app.post('/upload', upload.single('image'), async (req, res) => {
 
   await image.save()
   res.json(image)
+})
+
+app.delete('/upload', async (req, res) => {
+  const { imgPath } = req.body
+
+  try {
+    fs.unlink(`./public/${imgPath}`, (err) => {
+      if (err) {
+        console.error(err)
+        return
+      }
+    })
+    await Image.deleteOne({ src: imgPath })
+    res.json({ message: 'Image Deleted' })
+  } catch (error) {
+    res.status(404)
+    throw new Error('Image not found')
+  }
 })
 
 app.get('/sitemap', (req, res) => {

@@ -8,6 +8,7 @@ const fetchImgs = async () => {
 //maps images into admin panel
 const mapImgs = async () => {
   //fetches images from database
+
   const images = await fetchImgs()
 
   for (let i = 0; i < images.length; i++) {
@@ -34,8 +35,11 @@ const mapImgs = async () => {
     admin__upload.appendChild(admin__upload__text)
 
     const admin__upload__x = document.createElement('p')
-    admin__upload__x.className = 'admin__upload__x'
+    admin__upload__x.className = `admin__upload__x`
     admin__upload__x.textContent = 'X'
+    admin__upload__x.onclick = () => {
+      deleteImg(images[i].src)
+    }
     admin__upload.appendChild(admin__upload__x)
 
     adminMain.appendChild(admin__upload)
@@ -44,6 +48,7 @@ const mapImgs = async () => {
 
 mapImgs()
 
+//upload new image
 document.querySelector('#file').addEventListener('change', async (e) => {
   const file = e.target.files[0]
   const formData = new FormData()
@@ -56,10 +61,23 @@ document.querySelector('#file').addEventListener('change', async (e) => {
       },
     }
 
-    const { data } = await axios.post('/upload', formData, config)
+    await axios.post('/upload', formData, config)
 
-    console.log(data)
+    location.reload()
   } catch (error) {
     console.error(error)
   }
 })
+
+//deletes image
+
+const deleteImg = async (imgPath) => {
+  await axios({
+    method: 'DELETE',
+    url: '/upload',
+    data: {
+      imgPath,
+    },
+  })
+  location.reload()
+}

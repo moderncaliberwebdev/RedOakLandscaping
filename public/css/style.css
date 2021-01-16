@@ -245,7 +245,7 @@ input[type='file'] {
   border: rgb(201, 201, 201) 1px solid;
   width: 70vw;
   margin: 10px auto;
-  height: 50px;
+  height: auto;
 }
 .admin__upload__thumb {
   width: 70px;
@@ -257,11 +257,13 @@ input[type='file'] {
   margin: 14px 20px;
   font-size: 15px;
   height: 20px;
+  width: 100px;
 }
 .admin__upload__x {
-  margin: auto 0 auto auto;
+  margin: 0 0 0 auto;
   order: 2;
-  padding: 13px;
+  height: 20px;
+  padding: 17px 10px;
   font-size: 20px;
   background: #8e0b13;
   color: #fff;
@@ -489,7 +491,6 @@ input[type='file'] {
     border: rgb(201, 201, 201) 1px solid;
     width: 70vw;
     margin: 10px auto;
-    height: 72px;
   }
   .admin__upload__thumb {
     width: 100px;
@@ -505,7 +506,8 @@ input[type='file'] {
   .admin__upload__x {
     margin: auto 0 auto auto;
     order: 2;
-    padding: 15px;
+    height: auto;
+    padding: 17px;
     font-size: 30px;
     background: #8e0b13;
     color: #fff;

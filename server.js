@@ -7,7 +7,11 @@ const multer = require('multer')
 const connectDB = require('./config/db')
 const mailTo = require('./mail')
 
+const generateToken = require('./middleware/generateToken')
+const protect = require('./middleware/authMiddleware')
+
 const Image = require('./models/imageModel')
+const User = require('./models/userModel')
 
 const app = express()
 
@@ -110,7 +114,7 @@ app.get('/login', (req, res) => {
   res.render('login')
 })
 
-app.get('/admin', (req, res) => {
+app.get('/admin', protect, (req, res) => {
   res.render('admin')
 })
 
@@ -179,11 +183,40 @@ app.delete('/upload', async (req, res) => {
   }
 })
 
+// Makes a new User
+// app.post('/user', async (req, res) => {
+//   const user = new User({
+//     username: req.body.username,
+//     password: req.body.password,
+//   })
+
+//   await user.save()
+//   res.json(user)
+// })
+
+app.post('/login', async (req, res) => {
+  const { usernameValue, passwordValue } = req.body
+  console.log(usernameValue)
+
+  const user = await User.findOne({ username: usernameValue })
+
+  if (user && (await user.matchPassword(passwordValue))) {
+    res.json({
+      _id: user._id,
+      username: user.username,
+      password: user.password,
+      token: generateToken(user._id),
+    })
+  } else {
+    res.send({ message: 'User not found' }).status(401)
+    throw new Error('User not found')
+  }
+})
+
 app.get('/sitemap', (req, res) => {
   res.contentType('application/xml')
   res.sendFile(path.join(__dirname, 'sitemap.xml'))
 })
-
 // DB Routes
 app.get('/image', async (req, res) => {
   const images = await Image.find({})

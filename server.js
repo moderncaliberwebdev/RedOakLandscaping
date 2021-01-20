@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const hbs = require('hbs')
 const fs = require('fs')
 const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 const multer = require('multer')
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, './public')))
 
 //setting up hbs
 app.set('view engine', 'hbs')
+hbs.registerPartials(path.join(__dirname, './views/partials'))
 
 // Data parsing
 app.use(express.urlencoded({ extended: false }))
@@ -114,8 +116,14 @@ app.get('/login', (req, res) => {
   res.render('login')
 })
 
-app.get('/admin', protect, (req, res) => {
+app.get('/admin', (req, res) => {
   res.render('admin')
+})
+
+app.get('/auth', protect, (req, res) => {
+  res.send({
+    auth: true,
+  })
 })
 
 // Image upload

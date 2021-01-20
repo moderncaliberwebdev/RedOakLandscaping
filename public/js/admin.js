@@ -1,3 +1,25 @@
+const adminAuth = async () => {
+  const mainContainer = document.querySelector('.mainContainer')
+  const token = localStorage.getItem('token')
+  if (token) {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+    const { data } = await axios.get('/auth', config)
+    if (data.auth) {
+      mainContainer.style.display = 'block'
+    } else {
+      window.location.href = '/pagenotfound'
+    }
+  } else {
+    window.location.href = '/pagenotfound'
+  }
+}
+
+adminAuth()
+
 // Fetches images from database
 const fetchImgs = async () => {
   const response = await fetch('/image')

@@ -21,18 +21,9 @@
                 <a href="/login">Log In</a>
             </nav>
         </header>
-        <p id="galleryTitle">Admin</p>
-        <main id="adminMain">
-            <form>
-
-                <input type="file" name="file" id="file" class="inputfile" />
-                <label for="file" class="admin__add">
-                    <img src="images/plus.png" alt="Add New" class="admin__add__image">
-                    Add New
-                </label>
-            </form>
-            <!-- images from database go here -->
-        </main>
+        <div class="mainContainer">
+            {{>adminMain}}
+        </div>
         <footer>
             <a href="/"> <img class="footerImg" src="images/home.png" alt="Home"></a>
             <a href="/gallery"><img class="footerImg" src="images/picture.png" alt="Photo Gallery"></a>

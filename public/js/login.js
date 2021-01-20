@@ -19,7 +19,9 @@ form.addEventListener('submit', async (e) => {
   )
 
   if (data && data.username === usernameValue) {
-    getAdmin(data.token)
+    //getAdmin(data.token)
+    localStorage.setItem('token', data.token)
+    window.location.href = '/admin'
   } else {
     formResponse.textContent = 'Username or Password Invalid'
   }
@@ -33,5 +35,4 @@ const getAdmin = async (token) => {
   }
   const { data } = await axios.get('/admin', adminConfig)
   console.log(data)
-  //window.location.href = 'http://localhost:8080/admin'
 }

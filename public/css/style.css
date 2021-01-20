@@ -462,6 +462,9 @@ input[type='file'] {
   }
 
   /* Admin */
+  .mainContainer {
+    display: none;
+  }
   #adminMain {
     margin-top: 5vh;
     font-family: 'Montserrat', sans-serif;

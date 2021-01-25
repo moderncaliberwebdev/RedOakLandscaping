@@ -61,10 +61,10 @@ const mapImgs = async () => {
 mapImgs()
 
 //reruns mapImgs on window resize
+const widthAtLoad = window.innerWidth > 0 ? window.innerWidth : screen.width
 window.addEventListener('resize', () => {
   const currentWidth = window.innerWidth > 0 ? window.innerWidth : screen.width
-  if (currentWidth < 610 && currentWidth > 590) {
+  if (currentWidth !== widthAtLoad) {
     mapImgs()
-    console.log(currentWidth)
   }
 })

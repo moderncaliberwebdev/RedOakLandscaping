@@ -61,7 +61,7 @@ const mapImgs = async () => {
 mapImgs()
 
 //reruns mapImgs on window resize
-const baseWidth = window.innerWidth > 0 ? window.innerWidth : screen.width
+let baseWidth = window.innerWidth > 0 ? window.innerWidth : screen.width
 window.addEventListener('resize', () => {
   const currentWidth = window.innerWidth > 0 ? window.innerWidth : screen.width
   if (currentWidth !== baseWidth) {

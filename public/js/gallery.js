@@ -30,7 +30,6 @@ const mapImgs = async () => {
   // splits images into 3 grid columns
   let count = 1
   const width = window.innerWidth > 0 ? window.innerWidth : screen.width
-
   for (let i = 0; i < images.length; i++) {
     if (width < 600) {
       count = 1
@@ -62,4 +61,10 @@ const mapImgs = async () => {
 mapImgs()
 
 //reruns mapImgs on window resize
-window.addEventListener('resize', mapImgs)
+window.addEventListener('resize', () => {
+  const currentWidth = window.innerWidth > 0 ? window.innerWidth : screen.width
+  if (currentWidth < 610 && currentWidth > 590) {
+    mapImgs()
+    console.log(currentWidth)
+  }
+})

@@ -120,6 +120,10 @@ app.get('/admin', (req, res) => {
   res.render('admin')
 })
 
+app.get('/truegrid', (req, res) => {
+  res.render('truegrid')
+})
+
 app.get('/auth', protect, (req, res) => {
   res.send({
     auth: true,

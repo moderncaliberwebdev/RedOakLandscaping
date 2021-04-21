@@ -73,8 +73,8 @@ footer {
   background: #8e0b13;
 }
 .footerImg {
-  width: 12vw;
-  padding: 3vw 6vw;
+  width: 11vw;
+  padding: 3vw 4vw;
   cursor: pointer;
 }
 #footCopyright {
@@ -270,6 +270,11 @@ input[type='file'] {
   cursor: pointer;
 }
 
+/* TrueGrid */
+.truegrid-img {
+  width: 100%;
+}
+
 /*resizing for larger screens */
 @media only screen and (min-width: 600px) {
   html,
@@ -299,7 +304,7 @@ input[type='file'] {
   nav {
     display: inline-block;
     padding: 2.5vw 0;
-    width: 50vw;
+    width: 60vw;
     text-align: center;
   }
   nav a {

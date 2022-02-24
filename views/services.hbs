@@ -1,98 +1,143 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang='en' dir='ltr'>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/gif" href="images/favicon.png">
-  <title>Red Oak Landscaping Inc</title>
-  <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link rel='icon' type='image/gif' href='images/favicon.png' />
+    <title>Red Oak Landscaping Inc</title>
+    <link rel='stylesheet' href='css/style.css' />
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-95LLZXZ5YR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src='https://www.googletagmanager.com/gtag/js?id=G-95LLZXZ5YR'
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []; function gtag() {
+      dataLayer.push(arguments); } gtag('js', new Date()); gtag('config',
+      'G-95LLZXZ5YR');
+    </script>
 
-    gtag('config', 'G-95LLZXZ5YR');
-  </script>
+  </head>
 
-</head>
-
-<body>
-  <div class="wrapper">
-    <header>
-      <a href="/"><img id="logo" src="images/logo.png" alt="Red Oak Landscaping Inc."></a>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/gallery">Photo Gallery</a>
-        <a href="/services">Services</a>
-        <a href="/estimate">Free Estimate</a>
-        <a href="/truegrid">TrueGrid</a>
-        <a href="/login">Log In</a>
-      </nav>
-    </header>
-    <p id="galleryTitle">Services</p>
-    <main id="servicesMain">
-      <div class="servicesContainer">
-        <img class="serviceImg" src="images/hardscaping.jpg" alt="Hardscaping">
-        <p class="imgHeader oneLineHeader">Hardscaping</p>
-        <p class="imgText">Installation of Patios, Walks, and Retaining Walls, and Outdoor Living Areas.</p>
-      </div>
-
-      <div class="servicesContainer">
-        <img class="serviceImg" src="images/residential.jpg" alt="Residential">
-        <p class="imgHeader">Residential Landscape Design & Installation</p>
-        <p class="imgText">Designing and landscaping new homes as well as updating landscapes on older home designs.</p>
-      </div>
-
-      <div class="servicesContainer">
-        <img class="serviceImg" src="images/excavating.jpg" alt="Excavating">
-        <p class="imgHeader oneLineHeader">Light Excavating</p>
-        <p class="imgText">Grading Swales and installation of Drain Pipes for buried down spouts. Light Excavator/Skid
-          Loader Work.</p>
-      </div>
-
-      <div class="servicesContainer">
-        <img class="serviceImg" src="images/commercial.jpg" alt="Commercial">
-        <p class="imgHeader">Commercial Landscaping</p>
-        <p class="imgText">Landscape Installations as per plan provided by a contractor. Includes Plantings, Retaining
-          Walls, and Hardscaping.</p>
-      </div>
-
-      <div class="servicesContainer">
-        <img class="serviceImg" src="images/seeding.jpg" alt="Seeding">
-        <p class="imgHeader seedingHeader">Seeding and Erosion Control</p>
-        <p class="imgText">Installation of lawns and erosion control materials for residential and commercial projects.
-        </p>
-      </div>
-      <div class="servicesContainer">
-        <img class="serviceImg" src="images/driveway.jpg" alt="Driveway">
-        <p class="imgHeader seedingHeader">Permeable Driveways and Patios</p>
-        <p class="imgText">Installation of permeable driveway and patio systems.
-        </p>
-      </div>
-    </main>
-    <footer>
-      <a href="/"> <img class="footerImg" src="images/home.png" alt="Home"></a>
-      <a href="/gallery"><img class="footerImg" src="images/picture.png" alt="Photo Gallery"></a>
-      <a href="/services"><img class="footerImg" src="images/wrench.png" alt="Services"></a>
-      <a href="/estimate"><img class="footerImg" src="images/calculator.png" alt="Free Estimate"></a>
-      <a href="/truegrid"><img class="footerImg" src="images/foxblock.png" alt="TrueGrid"></a>
-
-      <div class="footerContact">
-        <div class="footerContact__copyrightContainer">
-          <p id="footCopyright">Copyright © 2020 Red Oak Landscaping Inc.</p>
+  <body>
+    <div class='wrapper'>
+      <header>
+        <a href='/'><img
+            id='logo'
+            src='images/logo.png'
+            alt='Red Oak Landscaping Inc.'
+          /></a>
+        <nav>
+          <a href='/'>Home</a>
+          <a href='/gallery'>Photo Gallery</a>
+          <a href='/services'>Services</a>
+          <a href='/estimate'>Free Estimate</a>
+          {{! <a href="/truegrid">TrueGrid</a> }}
+          <a href='/login'>Log In</a>
+        </nav>
+      </header>
+      <p id='galleryTitle'>Services</p>
+      <main id='servicesMain'>
+        <div class='servicesContainer'>
+          <img
+            class='serviceImg'
+            src='images/hardscaping.jpg'
+            alt='Hardscaping'
+          />
+          <div class='serviceText'>
+            <p class='imgHeader oneLineHeader'>Hardscaping</p>
+            <p class='imgText'>Installation of Patios, Walks, and Retaining
+              Walls, and Outdoor Living Areas.</p>
+          </div>
         </div>
-        <div class="footerContact__contactContainer">
-          <p class="footContact" id="footAddress">403 North 6th Street, Denver PA, 17517</p>
-          <p class="footContact" id="footPhone">Phone: 717 336 6318 / Fax: 717 336 4998</p>
-        </div>
-      </div>
-    </footer>
-  </div>
 
-</body>
+        <div class='servicesContainer'>
+          <img
+            class='serviceImg'
+            src='images/residential.jpg'
+            alt='Residential'
+          />
+          <p class='imgHeader'>Residential Landscape Design & Installation</p>
+          <p class='imgText'>Designing and landscaping new homes as well as
+            updating landscapes on older home designs.</p>
+        </div>
+
+        <div class='servicesContainer'>
+          <img
+            class='serviceImg'
+            src='images/excavating.jpg'
+            alt='Excavating'
+          />
+          <p class='imgHeader oneLineHeader'>Light Excavating</p>
+          <p class='imgText'>Grading Swales and installation of Drain Pipes for
+            buried down spouts. Light Excavator/Skid Loader Work.</p>
+        </div>
+
+        <div class='servicesContainer'>
+          <img
+            class='serviceImg'
+            src='images/commercial.jpg'
+            alt='Commercial'
+          />
+          <p class='imgHeader'>Commercial Landscaping</p>
+          <p class='imgText'>Landscape Installations as per plan provided by a
+            contractor. Includes Plantings, Retaining Walls, and Hardscaping.</p>
+        </div>
+
+        <div class='servicesContainer'>
+          <img class='serviceImg' src='images/seeding.jpg' alt='Seeding' />
+          <p class='imgHeader seedingHeader'>Seeding and Erosion Control</p>
+          <p class='imgText'>Installation of lawns and erosion control materials
+            for residential and commercial projects.
+          </p>
+        </div>
+        <div class='servicesContainer'>
+          <img class='serviceImg' src='images/driveway.jpg' alt='Driveway' />
+          <p class='imgHeader seedingHeader'>Permeable Driveways and Patios</p>
+          <p class='imgText'>Installation of permeable driveway and patio
+            systems.
+          </p>
+        </div>
+      </main>
+      <footer>
+        <a href='/'>
+          <img class='footerImg' src='images/home.png' alt='Home' /></a>
+        <a href='/gallery'><img
+            class='footerImg'
+            src='images/picture.png'
+            alt='Photo Gallery'
+          /></a>
+        <a href='/services'><img
+            class='footerImg'
+            src='images/wrench.png'
+            alt='Services'
+          /></a>
+        <a href='/estimate'><img
+            class='footerImg'
+            src='images/calculator.png'
+            alt='Free Estimate'
+          /></a>
+        <a href='/truegrid'><img
+            class='footerImg'
+            src='images/foxblock.png'
+            alt='TrueGrid'
+          /></a>
+
+        <div class='footerContact'>
+          <div class='footerContact__copyrightContainer'>
+            <p id='footCopyright'>Copyright © 2020 Red Oak Landscaping Inc.</p>
+          </div>
+          <div class='footerContact__contactContainer'>
+            <p class='footContact' id='footAddress'>403 North 6th Street, Denver
+              PA, 17517</p>
+            <p class='footContact' id='footPhone'>Phone: 717 336 6318 / Fax: 717
+              336 4998</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+  </body>
 
 </html>

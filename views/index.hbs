@@ -1,77 +1,114 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang='en' dir='ltr'>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Welcome to Red Oak Landscaping serving Lancaster, Lebanon, Berks, and Chester Counties. Providing Design, Installing Landscapes and Hardscapes.">
-  <meta property="og:title" content="Red Oak Landscaping Inc">
-  <meta property="og:url" content="www.redoakinc.org">
-  <meta property="og:type" content="website">
-  <meta property="og:description"
-    content="Welcome to Red Oak Landscaping serving Lancaster, Lebanon, Berks, and Chester Counties. Providing Design, Installing Landscapes and Hardscapes.">
-  <meta property="og:image" content="images/ogimg.png">
-  <link rel="icon" type="image/gif" href="images/favicon.png">
-  <title>Red Oak Landscaping Inc</title>
-  <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta
+      name='description'
+      content='Welcome to Red Oak Landscaping serving Lancaster, Lebanon, Berks, and Chester Counties. Providing Design, Installing Landscapes and Hardscapes.'
+    />
+    <meta property='og:title' content='Red Oak Landscaping Inc' />
+    <meta property='og:url' content='www.redoakinc.org' />
+    <meta property='og:type' content='website' />
+    <meta
+      property='og:description'
+      content='Welcome to Red Oak Landscaping serving Lancaster, Lebanon, Berks, and Chester Counties. Providing Design, Installing Landscapes and Hardscapes.'
+    />
+    <meta property='og:image' content='images/ogimg.png' />
+    <link rel='icon' type='image/gif' href='images/favicon.png' />
+    <title>Red Oak Landscaping Inc</title>
+    <link rel='stylesheet' href='css/style.css' />
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-95LLZXZ5YR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src='https://www.googletagmanager.com/gtag/js?id=G-95LLZXZ5YR'
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []; function gtag() {
+      dataLayer.push(arguments); } gtag('js', new Date()); gtag('config',
+      'G-95LLZXZ5YR');
+    </script>
 
-    gtag('config', 'G-95LLZXZ5YR');
-  </script>
+  </head>
 
-</head>
-
-<body>
-  <div class="wrapper">
-    <header>
-      <a href="/"><img id="logo" src="images/logo.png" alt="Red Oak Landscaping Inc."></a>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/gallery">Photo Gallery</a>
-        <a href="/services">Services</a>
-        <a href="/estimate">Free Estimate</a>
-        <a href="/truegrid">TrueGrid</a>
-        <a href="/login">Log In</a>
-      </nav>
-    </header>
-    <div class="imgContainer">
-      <img class="flowersImg img__small" src="images/flowers.jpg" alt="flowers">
-      <img class="flowersImg img__large" src="images/flowers-large.jpg" alt="flowers">
-    </div>
-    <main>
-      <p id="mainTxt">Welcome to Red Oak Landscaping serving Lancaster, Lebanon, Berks, and Chester Counties. Providing
-        Design, Installing Landscapes and Hardscapes. We enhance the beauty and value of your home on any scale whether
-        large or small. Not only is your home a sanctuary, it is an investment. At Red Oak Landscaping we strive to
-        enhance the beauty of both.</p>
-      <p class="contact">403 North 6th Street, Denver PA, 17517</p>
-      <p class="contact">Phone: 717 336 6318 / Fax: 717 336 4998</p>
-    </main>
-    <p id="copyright">Copyright © 2020 Red Oak Landscaping Inc.</p>
-    <footer>
-      <a href="/"> <img class="footerImg" src="images/home.png" alt="Home"></a>
-      <a href="/gallery"><img class="footerImg" src="images/picture.png" alt="Photo Gallery"></a>
-      <a href="/services"><img class="footerImg" src="images/wrench.png" alt="Services"></a>
-      <a href="/estimate"><img class="footerImg" src="images/calculator.png" alt="Free Estimate"></a>
-      <a href="/truegrid"><img class="footerImg" src="images/foxblock.png" alt="TrueGrid"></a>
-
-      <div class="footerContact">
-        <div class="footerContact__copyrightContainer">
-          <p id="footCopyright">Copyright © 2020 Red Oak Landscaping Inc.</p>
-        </div>
-        <div class="footerContact__contactContainer">
-          <p class="footContact" id="footAddress">403 North 6th Street, Denver PA, 17517</p>
-          <p class="footContact" id="footPhone">Phone: 717 336 6318 / Fax: 717 336 4998</p>
-        </div>
+  <body>
+    <div class='wrapper'>
+      <header>
+        <a href='/'><img
+            id='logo'
+            src='images/logo.png'
+            alt='Red Oak Landscaping Inc.'
+          /></a>
+        <nav>
+          <a href='/'>Home</a>
+          <a href='/gallery'>Photo Gallery</a>
+          <a href='/services'>Services</a>
+          <a href='/estimate'>Free Estimate</a>
+          {{! <a href="/truegrid">TrueGrid</a> }}
+          <a href='/login'>Log In</a>
+        </nav>
+      </header>
+      <div class='imgContainer'>
+        <img
+          class='flowersImg img__small'
+          src='images/flowers.jpg'
+          alt='flowers'
+        />
+        <img
+          class='flowersImg img__large'
+          src='images/flowers-large.jpg'
+          alt='flowers'
+        />
       </div>
-    </footer>
-  </div>
-</body>
+      <main>
+        <p id='mainTxt'>Welcome to Red Oak Landscaping serving Lancaster,
+          Lebanon, Berks, and Chester Counties. Providing Design, Installing
+          Landscapes and Hardscapes. We enhance the beauty and value of your
+          home on any scale whether large or small. Not only is your home a
+          sanctuary, it is an investment. At Red Oak Landscaping we strive to
+          enhance the beauty of both.</p>
+        <p class='contact'>403 North 6th Street, Denver PA, 17517</p>
+        <p class='contact'>Phone: 717 336 6318 / Fax: 717 336 4998</p>
+      </main>
+      <p id='copyright'>Copyright © 2020 Red Oak Landscaping Inc.</p>
+      <footer>
+        <a href='/'>
+          <img class='footerImg' src='images/home.png' alt='Home' /></a>
+        <a href='/gallery'><img
+            class='footerImg'
+            src='images/picture.png'
+            alt='Photo Gallery'
+          /></a>
+        <a href='/services'><img
+            class='footerImg'
+            src='images/wrench.png'
+            alt='Services'
+          /></a>
+        <a href='/estimate'><img
+            class='footerImg'
+            src='images/calculator.png'
+            alt='Free Estimate'
+          /></a>
+        <a href='/truegrid'><img
+            class='footerImg'
+            src='images/foxblock.png'
+            alt='TrueGrid'
+          /></a>
+
+        <div class='footerContact'>
+          <div class='footerContact__copyrightContainer'>
+            <p id='footCopyright'>Copyright © 2020 Red Oak Landscaping Inc.</p>
+          </div>
+          <div class='footerContact__contactContainer'>
+            <p class='footContact' id='footAddress'>403 North 6th Street, Denver
+              PA, 17517</p>
+            <p class='footContact' id='footPhone'>Phone: 717 336 6318 / Fax: 717
+              336 4998</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 
 </html>

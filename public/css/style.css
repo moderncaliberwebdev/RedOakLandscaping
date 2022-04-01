@@ -282,7 +282,49 @@ input[type='file'] {
 }
 .truegrid-img {
   width: 100%;
+  cursor: pointer;
 }
+.truegrid-desc {
+  margin-top: -5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10rem;
+  bottom: 30vh;
+  width: 70vw;
+  font-size: 2vw;
+  text-align: center;
+  background: #fff;
+  padding: 5vw;
+  border-radius: 40px;
+  color: #8e0b13;
+}
+.truegrid-button {
+  display: block;
+  margin: 1vw auto;
+  width: 30vw;
+  padding: 2vw;
+  border-radius: 30px;
+  background: #8e0b13;
+  color: #fff;
+  font-size: 2vw;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+/* position: relative;
+margin-left: auto;
+margin-right: auto;
+bottom: 17vh;
+width: 75vw;
+background: #fff;
+padding: 5vw;
+text-align: center;
+color: #8e0b13;
+border-radius: 40px;
+}
+#mainTxt {
+font-size: 6vw;
+margin: 0;
+} */
 
 /*resizing for larger screens */
 @media only screen and (min-width: 600px) {

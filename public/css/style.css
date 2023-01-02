@@ -272,7 +272,7 @@ input[type='file'] {
 
 /* TrueGrid */
 #trueGridTitle {
-  font-size: 4vw;
+  font-size: 35px;
   display: block;
   margin: 2rem auto;
   width: 100%;
@@ -291,7 +291,8 @@ input[type='file'] {
   margin-bottom: 10rem;
   bottom: 30vh;
   width: 70vw;
-  font-size: 2vw;
+  font-size: 16px;
+
   text-align: center;
   background: #fff;
   padding: 5vw;

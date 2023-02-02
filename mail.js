@@ -49,6 +49,8 @@ const mailTo = (
                 <h3>Zipcode:</h3> ${zip}
                 <h3>Message:</h3> ${message}
             `
+
+    console.log(output)
     const mailOptions = {
       from: email,
       to: 'jesse@redoakinc.org',

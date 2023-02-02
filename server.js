@@ -48,17 +48,7 @@ app.use((req, res, next) => {
 })
 
 app.get('/email', (req, res) => {
-  const {
-    name,
-    email,
-    phone,
-    address,
-    city,
-    state,
-    zip,
-    message,
-    msg,
-  } = req.query
+  const { name, email, phone, address, city, state, zip, message } = req.query
   mailTo(
     name,
     email,

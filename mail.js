@@ -11,6 +11,7 @@ const auth = {
 
 const transporter = nodemailer.createTransport(mailGun(auth))
 
+// mail function
 const mailTo = (
   name,
   email,

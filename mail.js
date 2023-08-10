@@ -1,15 +1,7 @@
-const nodemailer = require('nodemailer')
-const mailGun = require('nodemailer-mailgun-transport')
 const validator = require('validator')
+const sgMail = require('@sendgrid/mail')
 
-const auth = {
-  auth: {
-    api_key: process.env.MAILGUN_API_KEY,
-    domain: process.env.MAILGUN_API_DOMAIN,
-  },
-}
-
-const transporter = nodemailer.createTransport(mailGun(auth))
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 // mail function
 const mailTo = (
@@ -40,32 +32,40 @@ const mailTo = (
   } else if (!validator.isMobilePhone(phone)) {
     return callback('Provide a valid phone number', undefined)
   } else {
-    const output = `
-                <h3>Name:</h3> ${name}
-                <h3>Phone:</h3> ${phone}
-                <h3>Email:</h3> ${email}
-                <h3>Address:</h3> ${address}
-                <h3>City:</h3> ${city}
-                <h3>State:</h3> ${state}
-                <h3>Zipcode:</h3> ${zip}
-                <h3>Message:</h3> ${message}
-            `
-
-    console.log(output)
-    const mailOptions = {
-      from: email,
+    const msg = {
       to: 'jesse@redoakinc.org',
-      subject: 'Red Oak Estimate',
-      html: output,
+      from: {
+        name: 'Red Oak Inc Contact',
+        email: 'cmartin@moderncaliber.com',
+      },
+      templateId: 'd-b13ca8fd92a9438d8c836527c786286f',
+      dynamic_template_data: {
+        name,
+        email,
+        phone,
+        address,
+        city,
+        state,
+        zip,
+        message,
+        callback,
+      },
     }
+    //ES8
+    const sendSGMail = async () => {
+      try {
+        await sgMail.send(msg)
 
-    transporter.sendMail(mailOptions, (err, data) => {
-      if (err) {
-        callback('Internal Error', undefined)
-      } else {
-        callback(undefined, data)
+        callback(undefined, { sent: true })
+      } catch (error) {
+        console.error(error)
+
+        if (error.response) {
+          console.error(error.response.body)
+        }
       }
-    })
+    }
+    sendSGMail()
   }
 }
 

@@ -10,6 +10,7 @@
   "author": "Caleb Martin",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-http-to-https": "^1.1.4",
